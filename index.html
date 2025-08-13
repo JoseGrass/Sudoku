@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sudoku</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sudoku</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="app-header">
-    <h1>Sudoku</h1>
-    <div class="status-bar">
-      <div id="difficultyLabel" class="pill">Normal</div>
-      <div id="timer" aria-live="polite">00:00</div>
-      <button id="btnNew" class="btn primary" aria-label="Nuevo juego">Nuevo</button>
-    </div>
-  </header>
-
-  <main class="app-main">
-    <section class="board-wrap" aria-label="Tablero Sudoku">
-      <div id="board" class="board" role="grid" aria-label="Sudoku 9 por 9"></div>
-    </section>
-
-    <section class="toolbar">
-      <div class="row">
-        <label class="segmented" aria-label="Dificultad">
-          <input type="radio" name="diff" value="easy" />
-          <span>Fácil</span>
-          <input type="radio" name="diff" value="normal" checked />
-          <span>Normal</span>
-          <input type="radio" name="diff" value="hard" />
-          <span>Difícil</span>
-        </label>
-
-        <button id="btnCheck" class="btn" aria-label="Comprobar">Comprobar</button>
-        <button id="btnHint" class="btn" aria-label="Pista">Pista</button>
-        <button id="btnUndo" class="btn" aria-label="Deshacer">↶</button>
-        <button id="btnErase" class="btn" aria-label="Borrar celda">Borrar</button>
-        <button id="btnNotes" class="btn" aria-pressed="false" aria-label="Notas (lápiz)">Notas</button>
-      </div>
-    </section>
-
-    <section class="numpad" aria-label="Teclado numérico">
-      <button class="key" data-key="1">1</button>
-      <button class="key" data-key="2">2</button>
-      <button class="key" data-key="3">3</button>
-      <button class="key" data-key="4">4</button>
-      <button class="key" data-key="5">5</button>
-      <button class="key" data-key="6">6</button>
-      <button class="key" data-key="7">7</button>
-      <button class="key" data-key="8">8</button>
-      <button class="key" data-key="9">9</button>
-      <button class="key wide" data-key="0">Borrar</button>
-    </section>
-
-    <p id="message" class="message" role="status" aria-live="polite"></p>
-  </main>
-
-  <footer class="app-footer">
-    <small>Funciona con teclado (1–9, 0/Borrar, N para notas, Backspace) y táctil.</small>
-  </footer>
-
-  <script src="app.js"></script>
+<h1>Sudoku</h1>
+<div id="board"></div>
+<div class="numpad">
+  <button onclick="fill(1)">1</button>
+  <button onclick="fill(2)">2</button>
+  <button onclick="fill(3)">3</button>
+  <button onclick="fill(4)">4</button>
+  <button onclick="fill(5)">5</button>
+  <button onclick="fill(6)">6</button>
+  <button onclick="fill(7)">7</button>
+  <button onclick="fill(8)">8</button>
+  <button onclick="fill(9)">9</button>
+  <button onclick="fill(0)">Borrar</button>
+</div>
+<div id="controls">
+  <button onclick="checkSolution()">Verificar</button>
+  <button onclick="newGame()">Nuevo juego</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
